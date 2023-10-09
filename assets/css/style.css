@@ -1,0 +1,523 @@
+/* ================ Fonts ================ */
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "American-Captain";
+  src: url("../fonts/American-Captain.otf") format("opentype");
+}
+
+/* ===============< color,fonts and width >=============== */
+:root {
+  /* colors varibles*/
+  --primary-Color: rgba(0, 219, 168, 0.6);
+  --secondary-Color: rgba(0, 88, 219, 0.6);
+  --bg-Color: #000000;
+  --text-Color: #ffffff;
+  --accent-Color: rgba(209, 41, 41, 0.6);
+
+  /* fonts variables */
+  --sf-pro-display: "SF Pro Display", sans-serif;
+  --american-captain: "American-Captain", sans-serif;
+
+  /* font sizes variables */
+  --fs-lg: 8.125rem;
+  --fs-semi-lg: 6.875rem;
+  --fs-md: 3.5rem;
+  --fs-semi-md: 2.1875rem;
+  --fs-sm: 2rem;
+  --fs-semi-sm: 1.5rem;
+  --fs-xx-sm: 1.0625rem;
+
+  /* Section Variables*/
+  --section-padding: 6.25rem;
+  --section-width: calc(120rem - 6.25rem * 2);
+}
+
+body {
+  background-color: var(--bg-Color);
+  color: var(--text-Color);
+}
+
+/* ========== Container ========== */
+.container {
+  max-width: var(--section-width);
+  margin: 0 auto;
+}
+
+/* ==================== Header Section CSS Start ==================== */
+.header {
+  background: url("../img/hero-bg.png") no-repeat top;
+  background-size: cover;
+}
+
+.header > .flex {
+  flex-direction: column;
+}
+
+.header__navbar {
+  padding: 2rem 0;
+}
+
+.header__menu ul {
+  gap: 2.5rem;
+}
+
+.header__logo h2 {
+  font-family: var(--american-captain);
+  font-weight: 400;
+  font-size: var(--fs-md);
+}
+
+.header__menu li,
+.header__contact--btn,
+.header__discover--btn {
+  font-family: var(--sf-pro-display);
+  font-size: var(--fs-semi-sm);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.header__contact--btn,
+.header__discover--btn {
+  padding: 0.5rem 2rem;
+  border: 2px solid var(--text-Color);
+  border-radius: 0.5rem;
+}
+
+.header__hero {
+  text-align: right;
+  padding-block: 5.75rem 17.56rem;
+}
+
+.header__content {
+  flex-direction: column;
+  align-items: end;
+}
+
+.header__content h1 {
+  font-size: var(--fs-lg);
+  font-family: var(--american-captain);
+  font-weight: 400;
+  max-width: 42rem;
+}
+
+.header__content h3 {
+  font-family: var(--sf-pro-display);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  max-width: 18rem;
+  margin-block: 0.25rem 1.75rem;
+}
+
+.header__discover--btn {
+  gap: 0.62rem;
+}
+/* ==================== Header Section CSS End ==================== */
+
+/* ==================== About Section CSS Start ==================== */
+.about {
+  padding-block: 3.75rem;
+}
+
+.about__header h2 {
+  font-family: var(--american-captain);
+  text-align: center;
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: 4.24rem;
+}
+
+.about___content > * {
+  flex: 1;
+}
+
+.about__text {
+  align-self: center;
+  padding-right: 10rem;
+}
+
+.about__text p {
+  font-family: var(--sf-pro-display);
+  font-weight: 400;
+  font-size: var(--fs-semi-sm);
+  line-height: normal;
+}
+
+.about__text p:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+/* ==================== About Section CSS End ==================== */
+
+/* ==================== Benifits Section CSS Start ==================== */
+.benefits {
+  padding-block: 5.62rem 7.12rem;
+}
+
+.benefits .container {
+  position: relative;
+}
+
+.benefits .container::before {
+  content: url("../img/Lines-2.png");
+  color: #fff;
+  position: absolute;
+  left: -5rem;
+  top: 0;
+}
+
+.benefits .container::after {
+  content: url("../img/Lines-1.png");
+  color: #fff;
+  position: absolute;
+  right: -5rem;
+  bottom: -9rem;
+}
+
+.benefits__header h2 {
+  color: var(--text-Color);
+  font-family: var(--american-captain);
+  font-weight: 400;
+  font-size: var(--fs-semi-lg);
+  text-align: center;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.benefits__header p {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-family: var(--sf-pro-display);
+  font-weight: 400;
+  font-size: var(--fs-semi-sm);
+  line-height: normal;
+}
+
+.benefits__cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 5.31rem;
+  padding-inline: 8.13rem;
+  margin-top: calc(4.28rem * 2 + 1rem);
+}
+
+.benefits__cards > * {
+  flex: 1;
+}
+
+.benefits__card--item {
+  border-radius: 1rem;
+  padding: 2.19rem 2.12rem;
+  position: relative;
+  text-align: center;
+  max-width: fit-content;
+}
+
+.benefits__card--img {
+  padding: 0.98rem 2.12rem;
+  height: 14rem;
+  margin-top: -7.5rem;
+}
+
+.benefits__card--img img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.benefits__card--item h5 {
+  font-family: var(--sf-pro-display);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  text-transform: capitalize;
+  margin: 1.25rem auto;
+}
+
+.benefits__card--item p {
+  font-family: var(--sf-pro-display);
+  font-weight: 500;
+  font-size: var(--fs-semi-sm);
+  margin-top: 1rem;
+}
+
+.benefits__card--item p a {
+  text-decoration: underline;
+  display: block;
+  margin-top: 1rem;
+}
+
+.card--primary {
+  background-color: var(--primary-Color);
+}
+
+.card--secondary {
+  background-color: var(--secondary-Color);
+}
+
+.card--accent {
+  background-color: var(--accent-Color);
+}
+
+/* ==================== Benifits Section CSS End ==================== */
+
+/* ==================== Cars Section CSS Start ==================== */
+.cars__header h2 {
+  color: var(--text-Color);
+  font-family: var(--american-captain);
+  font-weight: 400;
+  font-size: var(--fs-semi-lg);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cars__header p {
+  margin-top: 2rem;
+  font-family: var(--sf-pro-display);
+  font-weight: 400;
+  font-size: var(--fs-semi-sm);
+  line-height: normal;
+}
+
+/* ==================== Cars Section CSS End ==================== */
+
+/* ==================== Play Section CSS Start ==================== */
+.play {
+  padding-block: 5.25rem;
+  position: relative;
+}
+
+.play .container {
+  position: relative;
+}
+
+.play .container::before {
+  content: url("../img/star_2.png");
+  color: #fff;
+  position: absolute;
+  z-index: -999;
+  top: 4rem;
+  left: -6rem;
+}
+
+.play .container::after {
+  content: url("../img/star_1.png");
+  color: #fff;
+  position: absolute;
+  right: -5rem;
+  bottom: -9rem;
+}
+
+.play__header h2 {
+  font-family: var(--american-captain);
+  text-align: left;
+  max-width: 40rem;
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3.13rem;
+}
+
+.play__header p {
+  text-align: left;
+  font-family: var(--sf-pro-display);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  max-width: 25rem;
+  line-height: normal;
+}
+
+.play__video {
+  position: relative;
+}
+
+.play--btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+/* ==================== Play Section CSS End ==================== */
+
+/* ==================== Contact Section CSS Start ==================== */
+.contact {
+  padding-block: 7.25rem;
+}
+
+.contact .container {
+  position: relative;
+}
+
+.contact .container::before {
+  content: "contact us";
+  font-weight: 700;
+  font-size: 15.43281rem;
+  font-family: var(--sf-pro-display);
+  color: #fff;
+  opacity: 0.1;
+  position: absolute;
+  top: -8rem;
+  left: -6rem;
+}
+
+.contact > .container > * {
+  flex: 1;
+}
+
+.contact__header {
+  align-self: center;
+}
+
+.contact__header h2 {
+  color: var(--text-Color);
+  font-family: var(--american-captain);
+  font-weight: 400;
+  font-size: var(--fs-semi-lg);
+  text-align: left;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+.contact__header p {
+  margin-top: 2.5rem;
+  text-align: left;
+  font-family: var(--sf-pro-display);
+  font-weight: 400;
+  font-size: var(--fs-semi-sm);
+  line-height: normal;
+  max-width: 32rem;
+}
+
+.contact__form {
+  font-size: var(--fs-semi-sm);
+  font-family: var(--sf-pro-display);
+}
+
+.contact__form form {
+  max-width: 39rem;
+  margin-left: auto;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 3.12rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid var(--text-Color);
+  outline: none;
+  background-color: transparent;
+}
+
+.form-group input::placeholder {
+  color: #fff;
+}
+
+.form-group select {
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+.contact__form input[type="submit"] {
+  display: block;
+  padding: 0.6rem 2.56rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--text-Color);
+  max-width: fit-content;
+}
+
+.form-group:nth-of-type(4) {
+  border-bottom: 1px solid var(--text-Color);
+}
+
+.form-group:nth-of-type(5) {
+  width: 98%;
+}
+
+.form-group.inline {
+  display: inline-block;
+  width: 49%;
+}
+/* ==================== Contact Section CSS End ==================== */
+
+/* ==================== Footer Section CSS Start ==================== */
+.footer {
+  padding-block: 3.75rem;
+}
+
+.footer__header h2 {
+  color: var(--text-Color);
+  font-family: var(--american-captain);
+  font-weight: 400;
+  font-size: var(--fs-semi-lg);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+.footer__links h4 {
+  font-family: var(--sf-pro-display);
+  font-size: var(--fs-semi-md);
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.04156rem;
+  text-transform: capitalize;
+}
+
+.footer__links a {
+  font-family: var(--sf-pro-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 0.6875rem;
+  color: var(--text-Color);
+  opacity: 0.8;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-top: 1.25rem;
+}
+
+.footer__social--icons {
+  margin-top: 1.25rem;
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+/* ==================== Footer Section CSS End ==================== */
+
+/* ==================== Copyright Section CSS Start ==================== */
+.copyright {
+  margin-bottom: 3.75rem;
+}
+.copyright__left p,
+.copyright__right p {
+  color: #fff;
+  font-family: var(--sf-pro-display);
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: -0.01781rem;
+}
+
+.copyright__left {
+  gap: 2.12rem;
+}
+
+.copyright__left p {
+  text-transform: capitalize;
+}
+/* ==================== Copyright Section CSS End ==================== */

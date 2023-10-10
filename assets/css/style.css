@@ -14,7 +14,8 @@
   /* colors varibles*/
   --primary-Color: rgba(0, 219, 168, 0.6);
   --secondary-Color: rgba(0, 88, 219, 0.6);
-  --bg-Color: #000000;
+  --bg-Color: #1a191a;
+  --bg-Color-2: rgba(48, 45, 48, 0.16);
   --text-Color: #ffffff;
   --accent-Color: rgba(209, 41, 41, 0.6);
 
@@ -36,9 +37,65 @@
   --section-width: calc(120rem - 6.25rem * 2);
 }
 
+/* ==========< Flex & Grid Utilities >========== */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.ai-sb {
+  align-items: space-between;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== Section heading ========== */
+.section--head {
+  font-family: var(--american-captain);
+  font-weight: 400;
+  font-size: var(--fs-lg);
+  line-height: normal;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+.section--subHead {
+  font-family: var(--sf-pro-display);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  line-height: normal;
+}
+
+/* ========== Body ========== */
 body {
   background-color: var(--bg-Color);
   color: var(--text-Color);
+}
+
+button {
+  transition: transform 0.2s ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-3px);
 }
 
 /* ========== Container ========== */
@@ -61,30 +118,31 @@ body {
   padding: 2rem 0;
 }
 
-.header__menu ul {
-  gap: 2.5rem;
-}
-
+/* Logo */
 .header__logo h2 {
+  font-size: var(--fs-md);
   font-family: var(--american-captain);
   font-weight: 400;
-  font-size: var(--fs-md);
+}
+/* Menu */
+.header__menu ul {
+  gap: 2.5rem;
 }
 
 .header__menu li,
 .header__contact--btn,
 .header__discover--btn {
-  font-family: var(--sf-pro-display);
   font-size: var(--fs-semi-sm);
+  font-family: var(--sf-pro-display);
   font-weight: 500;
   text-transform: capitalize;
 }
 
 .header__contact--btn,
 .header__discover--btn {
-  padding: 0.5rem 2rem;
   border: 2px solid var(--text-Color);
   border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
 .header__hero {
@@ -98,17 +156,13 @@ body {
 }
 
 .header__content h1 {
-  font-size: var(--fs-lg);
-  font-family: var(--american-captain);
-  font-weight: 400;
   max-width: 42rem;
 }
 
 .header__content h3 {
-  font-family: var(--sf-pro-display);
   font-weight: 600;
-  font-size: var(--fs-sm);
-  max-width: 18rem;
+  letter-spacing: 1px;
+  max-width: 20rem;
   margin-block: 0.25rem 1.75rem;
 }
 
@@ -120,16 +174,30 @@ body {
 /* ==================== About Section CSS Start ==================== */
 .about {
   padding-block: 3.75rem;
+  overflow: hidden;
+}
+
+.about .container {
+  position: relative;
+}
+
+.about .container::after {
+  content: "about us";
+  color: #373737;
+  font-weight: 700;
+  font-size: 12.5rem;
+  font-family: var(--sf-pro-display);
+  opacity: 0.3;
+  position: absolute;
+  right: -5.5rem;
+  bottom: -10rem;
+  z-index: -999;
 }
 
 .about__header h2 {
-  font-family: var(--american-captain);
-  text-align: center;
-  font-size: var(--fs-lg);
-  font-weight: 400;
   line-height: 1;
-  text-shadow: 0px 20px rgba(0, 0, 0, 0.25);
   margin-bottom: 4.24rem;
+  text-align: center;
 }
 
 .about___content > * {
@@ -142,10 +210,9 @@ body {
 }
 
 .about__text p {
+  font-size: var(--fs-semi-sm);
   font-family: var(--sf-pro-display);
   font-weight: 400;
-  font-size: var(--fs-semi-sm);
-  line-height: normal;
 }
 
 .about__text p:not(:last-child) {
@@ -155,18 +222,19 @@ body {
 
 /* ==================== Benifits Section CSS Start ==================== */
 .benefits {
-  padding-block: 5.62rem 7.12rem;
+  background-color: var(--bg-Color-2);
 }
 
 .benefits .container {
   position: relative;
+  padding-block: 5.62rem 7.12rem;
 }
 
 .benefits .container::before {
   content: url("../img/Lines-2.png");
   color: #fff;
   position: absolute;
-  left: -5rem;
+  left: 0;
   top: 0;
 }
 
@@ -175,80 +243,74 @@ body {
   color: #fff;
   position: absolute;
   right: -5rem;
-  bottom: -9rem;
+  bottom: 0;
 }
 
 .benefits__header h2 {
-  color: var(--text-Color);
-  font-family: var(--american-captain);
-  font-weight: 400;
   font-size: var(--fs-semi-lg);
-  text-align: center;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
   max-width: 70%;
   margin: 0 auto;
+  text-align: center;
+  line-height: 1;
 }
 
 .benefits__header p {
+  font-size: var(--fs-semi-sm);
   margin-top: 2.5rem;
   text-align: center;
-  font-family: var(--sf-pro-display);
-  font-weight: 400;
-  font-size: var(--fs-semi-sm);
-  line-height: normal;
 }
 
 .benefits__cards {
   display: flex;
   justify-content: space-around;
   gap: 5.31rem;
-  padding-inline: 8.13rem;
   margin-top: calc(4.28rem * 2 + 1rem);
+  padding-inline: 8.13rem;
 }
-
+/* Benifit Cards CSS */
 .benefits__cards > * {
   flex: 1;
 }
 
 .benefits__card--item {
   border-radius: 1rem;
+  max-width: fit-content;
   padding: 2.19rem 2.12rem;
   position: relative;
   text-align: center;
-  max-width: fit-content;
 }
 
 .benefits__card--img {
+  height: 17rem;
+  margin-top: -8.5rem;
   padding: 0.98rem 2.12rem;
-  height: 14rem;
-  margin-top: -7.5rem;
 }
 
 .benefits__card--img img {
   width: 100%;
-  max-height: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
 .benefits__card--item h5 {
+  font-size: var(--fs-sm);
   font-family: var(--sf-pro-display);
   font-weight: 700;
-  font-size: var(--fs-sm);
-  text-transform: capitalize;
   margin: 1.25rem auto;
+  text-transform: capitalize;
 }
 
 .benefits__card--item p {
+  font-size: var(--fs-semi-sm);
   font-family: var(--sf-pro-display);
   font-weight: 500;
-  font-size: var(--fs-semi-sm);
   margin-top: 1rem;
 }
 
 .benefits__card--item p a {
-  text-decoration: underline;
   display: block;
   margin-top: 1rem;
+  text-decoration: underline;
 }
 
 .card--primary {
@@ -266,28 +328,93 @@ body {
 /* ==================== Benifits Section CSS End ==================== */
 
 /* ==================== Cars Section CSS Start ==================== */
+.cars {
+  padding-top: 6.25rem;
+}
+
 .cars__header h2 {
-  color: var(--text-Color);
-  font-family: var(--american-captain);
-  font-weight: 400;
   font-size: var(--fs-semi-lg);
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  line-height: 1;
 }
 
 .cars__header p {
-  margin-top: 2rem;
-  font-family: var(--sf-pro-display);
-  font-weight: 400;
   font-size: var(--fs-semi-sm);
-  line-height: normal;
+  margin-top: 2rem;
+}
+/* Cars Slider CSS */
+.cars__slider {
+  margin-top: 3.75rem;
+}
+
+.cars__slider--1 {
+  height: 16.875rem;
+}
+
+.slider-item {
+  height: 16.875rem;
+  position: relative;
+}
+
+.slider-item:hover {
+  cursor: pointer;
+}
+
+.slider-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider__item--overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  scale: 0;
+  transition: scale 0.5s ease-out;
+}
+
+.slider__item--overlay h4 {
+  font-size: var(--fs-sm);
+  font-family: var(--sf-pro-display);
+  font-weight: 700;
+}
+
+.slider__item--overlay h5 {
+  font-size: 1.25rem;
+  font-family: var(--sf-pro-display);
+  font-weight: 500;
+  margin-block: 0.62rem 1.75rem;
+}
+
+.slider__item--overlay button {
+  border: 2px solid var(--text-Color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.75rem;
+  font-size: var(--fs-semi-sm);
+  font-family: var(--sf-pro-display);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.slider-item:hover .slider__item--overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  scale: 1;
 }
 
 /* ==================== Cars Section CSS End ==================== */
 
 /* ==================== Play Section CSS Start ==================== */
 .play {
+  background-color: var(--bg-Color-2);
   padding-block: 5.25rem;
   position: relative;
+  overflow: hidden;
 }
 
 .play .container {
@@ -298,9 +425,9 @@ body {
   content: url("../img/star_2.png");
   color: #fff;
   position: absolute;
-  z-index: -999;
   top: 4rem;
   left: -6rem;
+  z-index: -999;
 }
 
 .play .container::after {
@@ -312,23 +439,15 @@ body {
 }
 
 .play__header h2 {
-  font-family: var(--american-captain);
-  text-align: left;
-  max-width: 40rem;
-  font-size: var(--fs-lg);
-  font-weight: 400;
-  line-height: 1;
-  text-shadow: 0px 20px rgba(0, 0, 0, 0.25);
   margin-bottom: 3.13rem;
+  max-width: 40rem;
+  text-align: left;
+  line-height: 1;
 }
 
 .play__header p {
-  text-align: left;
-  font-family: var(--sf-pro-display);
-  font-weight: 400;
-  font-size: var(--fs-sm);
   max-width: 25rem;
-  line-height: normal;
+  text-align: left;
 }
 
 .play__video {
@@ -355,10 +474,10 @@ body {
 
 .contact .container::before {
   content: "contact us";
+  color: #fff;
   font-weight: 700;
   font-size: 15.43281rem;
   font-family: var(--sf-pro-display);
-  color: #fff;
   opacity: 0.1;
   position: absolute;
   top: -8rem;
@@ -374,24 +493,17 @@ body {
 }
 
 .contact__header h2 {
-  color: var(--text-Color);
-  font-family: var(--american-captain);
-  font-weight: 400;
-  font-size: var(--fs-semi-lg);
+  font-size: 7.5rem;
   text-align: left;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  line-height: 1;
 }
 
 .contact__header p {
-  margin-top: 2.5rem;
+  max-width: 44rem;
   text-align: left;
-  font-family: var(--sf-pro-display);
-  font-weight: 400;
-  font-size: var(--fs-semi-sm);
-  line-height: normal;
-  max-width: 32rem;
+  line-height: 3.125rem;
 }
-
+/* Contact Form CSS */
 .contact__form {
   font-size: var(--fs-semi-sm);
   font-family: var(--sf-pro-display);
@@ -403,20 +515,20 @@ body {
 }
 
 .form-group {
-  position: relative;
   margin-bottom: 3.12rem;
+  position: relative;
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group select {
-  width: 100%;
-  padding: 1rem;
+  background-color: transparent;
   border: none;
   border-bottom: 1px solid var(--text-Color);
   outline: none;
-  background-color: transparent;
+  padding: 1rem;
+  width: 100%;
 }
 
 .form-group input::placeholder {
@@ -424,22 +536,28 @@ body {
 }
 
 .form-group select {
-  cursor: pointer;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  background-color: black;
   color: white;
+  cursor: pointer;
+}
+
+.form-group select option {
+  background-color: var(--bg-Color);
 }
 
 .contact__form input[type="submit"] {
-  display: block;
-  padding: 0.6rem 2.56rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
   background-color: transparent;
+  border: none;
   border: 1px solid var(--text-Color);
+  border-radius: 0.5rem;
+  display: block;
   max-width: fit-content;
+  padding: 0.6rem 2.56rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.contact__form input[type="submit"]:hover {
+  transform: translateY(-3px);
 }
 
 .form-group:nth-of-type(4) {
@@ -462,39 +580,56 @@ body {
 }
 
 .footer__header h2 {
-  color: var(--text-Color);
-  font-family: var(--american-captain);
-  font-weight: 400;
   font-size: var(--fs-semi-lg);
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
-
+/* Footer Links CSS */
 .footer__links h4 {
-  font-family: var(--sf-pro-display);
   font-size: var(--fs-semi-md);
-  line-height: 2rem;
+  font-family: var(--sf-pro-display);
   font-weight: 500;
-  letter-spacing: -0.04156rem;
   text-transform: capitalize;
+  letter-spacing: -0.04156rem;
+  line-height: 2rem;
 }
 
 .footer__links a {
-  font-family: var(--sf-pro-display);
   font-size: 1.0625rem;
+  font-family: var(--sf-pro-display);
   font-weight: 400;
-  line-height: 0.6875rem;
-  color: var(--text-Color);
+  margin-top: 1.25rem;
   opacity: 0.8;
   text-transform: capitalize;
   letter-spacing: 1px;
-  margin-top: 1.25rem;
+  line-height: 0.6875rem;
 }
 
 .footer__social--icons {
-  margin-top: 1.25rem;
-  font-size: 2rem;
   display: flex;
   gap: 1rem;
+  font-size: 2rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+}
+
+.footer__social--icons i {
+  border: none;
+  border-radius: 10%;
+  transition: all 0.3s ease-out;
+}
+
+.footer__social--icons i:nth-of-type(1):hover {
+  color: #0866ff;
+  background-color: transparent;
+}
+
+.footer__social--icons i:nth-of-type(2):hover {
+  color: #0A66C2;
+  background-color: transparent;
+}
+
+.footer__social--icons i:nth-of-type(3):hover {
+  color: #d62976;
+  background-color: transparent;
 }
 /* ==================== Footer Section CSS End ==================== */
 
@@ -504,9 +639,8 @@ body {
 }
 .copyright__left p,
 .copyright__right p {
-  color: #fff;
-  font-family: var(--sf-pro-display);
   font-size: 0.9375rem;
+  font-family: var(--sf-pro-display);
   font-style: normal;
   font-weight: 400;
   line-height: 2rem;
